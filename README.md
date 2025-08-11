@@ -79,6 +79,8 @@ Components
         The force exceeds kmax×xmaxkmax​×xmax​.
         The stretch exceeds the maximum allowable length (xmaxxmax​).
 
+
+
 Usage Example
 
     Set Initial Parameters:
@@ -89,18 +91,3 @@ Usage Example
     Visualize System Behavior:
         The spring stretches and compresses based on physical forces.
         Update parameters like stiffness or damping to see how the system's behavior changes.
-
-Customization
-
-    Parameters: Modify gravitational constant gg, maximum stiffness kmaxkmax​, or the frame rate (fps).
-    Design: Adjust the appearance of the spring, mass, and GUI elements.
-
-Future Enhancements
-
-    Add energy visualization (potential, kinetic, and damping energy).
-    Introduce support for multiple springs and masses.
-    Save simulation results for analysis.
-
-License
-
-This project is open-source and available under the MIT License.
