@@ -77,7 +77,7 @@ Components
 
     Spring turns red and the simulation halts when:
         The force exceeds kmax×xmaxkmax​×xmax​.
-        The stretch exceeds the maximum allowable length (xmaxxmax​).
+        The stretch exceeds the maximum allowable length.
 
 
 
