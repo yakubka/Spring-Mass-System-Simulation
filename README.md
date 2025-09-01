@@ -79,6 +79,7 @@ $$
 ---
 
 ## Screenshots
+![Spring-Mass Simulation](https://raw.githubusercontent.com/IbrokhimN/Spring-Mass-System-Simulation/refs/heads/main/photo.png)
 
 ---
 
