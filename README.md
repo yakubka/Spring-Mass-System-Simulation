@@ -1,93 +1,89 @@
-# Spring-Mass System Simulation
+# Spring-Mass Interactive Simulation
 
-This Python program simulates a spring-mass-damper system using Matplotlib for visualization and SciPy for solving the differential equations governing the motion. It features a graphical user interface (GUI) for dynamically adjusting parameters and observing their impact on the system in real-time.
-Features
-Physics Simulation
+[![Python](https://img.shields.io/badge/Python-3.8%2B-blue)](https://python.org)
 
-    Simulates the motion of a mass-spring-damper system under gravity using the equation:
-    
-    x¨=g−kxm−bx˙m
-    x¨=g−mkx​−mbx˙​ where:
-        xx: displacement
-        kk: spring stiffness
-        mm: mass
-        bb: damping coefficient
-        gg: gravitational acceleration (9.81 m/s²)
+This project is an **interactive spring-mass simulation** built with Python and `matplotlib`.
+You can dynamically adjust spring stiffness, mass, damping, and maximum stretch using **sliders**, and watch the mass respond in real time!
 
-Interactive GUI
+---
 
-    Dynamically update the following parameters:
-    
-        Spring Stiffness (k)
-        Mass (m)
-        Damping Coefficient (b)
-        Maximum Stretch (x_max)
-        
-    Text boxes allow real-time updates, with the animation adjusting instantly.
+## Features
 
-Animation
+* **Interactive sliders** for adjusting:
 
-    Visualizes:
-    
-        The spring stretching/compressing.
-        The mass (as a blue square) moving up and down.
-        A red spring color when the spring breaks due to excessive force/stretch.
+  * Spring stiffness (`k`) in N/m
+  * Mass (`m`) in kg
+  * Damping coefficient (`b`) in kg/s
+  * Maximum spring extension (`xmax`) in meters
+* Real-time **animation of spring and mass**
+* Visual indication of spring breaking (changes color to red)
+* Smooth simulation with **gravity** and optional damping
+* Reset on parameter change
 
-Requirements
+---
 
-    Python 3.7 or above
-    Required libraries:
-    
-        Matplotlib: for animation and GUI elements.
-        NumPy: for numerical computations.
-        SciPy: for solving differential equations.
+## Installation
 
-Installation
+1. Clone the repository:
 
-    Clone the repository or download the script:
+```bash
+git clone https://github.com/IbrokhimN/Spring-Mass-System-Simulation.git
+cd Spring-Mass-System-Simulation
+```
 
-git clone https://github.com/your-repo/spring-mass-system.git
-cd spring-mass-system
+2. Install required packages:
 
-Install the required libraries:
+```bash
+pip install numpy matplotlib scipy
+```
 
-    pip install matplotlib scipy numpy
+---
 
-How to Run
+## Usage
 
-    Execute the script:
+Run the simulation:
 
-    python spring_mass_simulation.py
+```bash
+python physic_project.py
+```
 
-    Use the GUI to adjust parameters and observe changes in real-time.
+* Adjust the sliders to change parameters on the fly.
+* Watch the mass oscillate or fall if the spring breaks.
 
-Components
-1. Differential Equation Solver
+---
 
-    Uses solve_ivp from SciPy to solve the second-order ODE for the spring-mass-damper system.
+## How It Works
 
-2. Visualization
+* The system simulates a **spring-mass-damper** under gravity:
 
-    Matplotlib:
-        FuncAnimation animates the spring and mass motion.
-        TextBox widgets allow parameter adjustments during runtime.
-        A dynamic spring and mass visualization with collision detection at the ground level.
+$$
+m \ddot{x} + b \dot{x} + k x = m g
+$$
 
-3. Spring Break Condition
+* `solve_ivp` from `scipy` computes the motion.
+* Animation updates spring shape and mass position in real time.
+* The spring **breaks** if:
 
-    Spring turns red and the simulation halts when:
-        The force exceeds kmax×xmaxkmax​×xmax​.
-        The stretch exceeds the maximum allowable length.
+  * `|x| > xmax` or
+  * `k * |x| > k_max * xmax`
 
+---
 
+## Future Improvements
 
-Usage Example
+* Add **reset button** to instantly reset the simulation.
+* Enable **multiple masses** on one spring.
+* Export animation as **GIF or video**.
+* Add **energy graphs** (kinetic, potential).
 
-    Set Initial Parameters:
-        Stiffness: 100 N/m
-        Mass: 1 kg
-        Damping Coefficient: 0.25 kg/s
-        Maximum Stretch: 1 m
-    Visualize System Behavior:
-        The spring stretches and compresses based on physical forces.
-        Update parameters like stiffness or damping to see how the system's behavior changes.
+---
+
+## Screenshots
+![Spring-Mass Simulation](https://raw.githubusercontent.com/IbrokhimN/Spring-Mass-System-Simulation/refs/heads/main/photo.png)
+
+---
+
+## License
+
+This project is licensed under the **MIT License** – see the [LICENSE](LICENSE) file for details.
+
